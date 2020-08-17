@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd">
+    <transition name="createDonation">
+        <service-call name="donation.DonationServices.create#Donation"/>
+        <default-response url="../Success"/>
+    </transition>
+    <widgets>
+        <label type="h1" text="Donation Form" />
+        <form-single name="CreateDonation" transition="createDonation">
+            <field name="firstName">
+                <default-field>
+                    <text-line size="30"/>
+                </default-field>
+            </field>
+            <field name="lastName">
+                <default-field>
+                    <text-line size="30"/>
+                </default-field>
+            </field>
+            <field name="emailAddress">
+                <default-field>
+                    <text-line size="30"/>
+                </default-field>
+            </field>
+            <field name="contactNumber">
+                <default-field>
+                    <text-line size="30"/>
+                </default-field>
+            </field>
+            <field name="amount">
+                <default-field>
+                    <text-line size="30"/>
+                </default-field>
+            </field>
+            <field name="creditCard">
+                <default-field title="Card Number">
+                    <text-line size="30"/>
+                </default-field>
+            </field>
+            <field name="expireMonth">
+                <default-field title="Exp Month">
+                    <text-line size="30" />
+                </default-field>
+            </field>
+            <field name="expireYear">
+                <default-field title="Exp Year">
+                    <text-line size="30" />
+                </default-field>
+            </field>
+            <field name="cardSecurityCode">
+                <default-field title="CVV">
+                    <text-line size="30"/>
+                </default-field>
+            </field>
+            <field name="submitButton"><default-field title="Donate"><submit/></default-field></field>
+        </form-single>
+    </widgets>
+</screen>
